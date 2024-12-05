@@ -5,6 +5,8 @@ const initialState = {
   package: "basic",
   actualVolume: 0,
   calculatedVolume: 0,
+  circumferenceMeters: 0,
+  baseMeters: 0,
   hatch: "none",
   dimmensions: {
     width: 0,
@@ -52,6 +54,7 @@ const ACTIONS = {
   UPDATE_DIMMENSIONS: "UPDATE_DIMMENSIONS",
   CALCULATE_VOLUME: "CALCULATE_VOLUME",
   CALCULATE_ACTUAL_VOLUME: "CALCULATE_ACTUAL_VOLUME",
+  CALCULATE_CIRCUMFERENCE_METERS: "CALCULATE_CIRCUMFERENCE_METERS",
   UPDATE_HATCH: "UPDATE_HATCH",
   UPDATE_PACKAGE: "UPDATE_PACKAGE",
   UPDATE_ADDONS: "UPDATE_ADDONS",
@@ -71,6 +74,14 @@ export const reducer = (state, { type, payload }) => {
     case "CALCULATE_ACTUAL_VOLUME":
       let volume2 = payload.width * payload.length * payload.depth;
       return { ...state, actualVolume: volume2 };
+
+    case "CALCULATE_CIRCUMFERENCE_METERS":
+      let circMeters = (payload.width + payload.length) * 2 * payload.depth;
+      let base = payload.width * payload.length;
+
+      let temp3 = { ...state, circumferenceMeters: circMeters };
+
+      return { ...temp3, baseMeters: base };
 
     case "UPDATE_HATCH":
       return { ...state, hatch: payload };

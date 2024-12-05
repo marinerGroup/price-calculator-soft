@@ -5,6 +5,7 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import format from "number-formatter";
 
 import { data } from "../../data";
 import "../../App.css";
@@ -54,10 +55,10 @@ export default function InstalationReceipt() {
           </AccordionDetails>
         </Accordion>
         <Typography variant="subtitle2" gutterBottom>
-          Vykop:
+          Výkop:
           <b>
             <small>od </small>
-            {state.calculatedVolume * data.excavation}
+            {format("### ##0,#0", state.calculatedVolume * data.excavation)}
             <small> €</small>
           </b>
         </Typography>
@@ -65,31 +66,32 @@ export default function InstalationReceipt() {
           Odvoz:
           <b>
             <small>od </small>
-            {state.calculatedVolume * data.extraction}
+            {format("### ##0,#0", state.calculatedVolume * data.extraction)}
             <small> €</small>
           </b>
         </Typography>
         <Typography variant="subtitle2" gutterBottom>
-          Betonaz - zaklady:
+          Betonáž - základy:
           <b>
             <small>od </small>
-            {state.actualVolume * data.concrete.base}
+            {format("### ##0,#0", state.actualVolume * data.concrete.base)}
             <small> €</small>
           </b>
         </Typography>
 
         <Typography variant="subtitle2" gutterBottom>
-          Betonaz - Steny:
+          Betonáž - Steny:
           <b>
             <small>od </small>
-            {state.actualVolume * data.concrete.walls}
+            {format("### ##0,#0", state.actualVolume * data.concrete.walls)}
             <small> €</small>
           </b>
         </Typography>
         <Typography variant="subtitle2" gutterBottom>
-          Sachta: {printHatch(state.hatch).hatchName}
+          Šachta: {printHatch(state.hatch).hatchName}
           <b>
-            <small>od </small> {printHatch(state.hatch).hatchPrice}{" "}
+            <small>od </small>{" "}
+            {format("### ##0,#0", printHatch(state.hatch).hatchPrice)}{" "}
             <small> €</small>
           </b>
         </Typography>

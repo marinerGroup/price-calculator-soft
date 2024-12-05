@@ -1,10 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
+
+import format from "number-formatter";
 import { useAppContext } from "../../providers/poolContext";
 import Typography from "@mui/material/Typography";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+
 import { data } from "../../data";
 import "../../App.css";
 
@@ -21,7 +24,7 @@ export default function PackageReceipt() {
             id="panel1-header"
           >
             <Typography variant="h6" component="h3">
-              Bazenova technologia:
+              Bazénová technológia:
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -37,23 +40,29 @@ export default function PackageReceipt() {
           <>
             <div>
               <Typography variant="subtitle2" gutterBottom>
-                Zakladny Balicek material:{" "}
+                Základný balíček materiál:{" "}
                 <b>
                   <small>od </small>
-                  {state.calculatedVolume * data.package.basic.material}
+                  {format(
+                    "### ##0,#0",
+                    state.calculatedVolume * data.package.basic.material
+                  )}
                   <small> €</small>
                 </b>
               </Typography>
             </div>
             <div>
               <Typography variant="subtitle2" gutterBottom>
-                Zakladny Balicek montaz:{" "}
+                Základný balíček montáž{" "}
                 <b>
                   <small>od </small>
-                  {Math.round(
-                    state.calculatedVolume *
-                      data.package.basic.material *
-                      data.package.basic.services
+                  {format(
+                    "### ##0,#0",
+                    Math.round(
+                      state.calculatedVolume *
+                        data.package.basic.material *
+                        data.package.basic.services
+                    )
                   )}
                   <small> €</small>
                 </b>
@@ -65,27 +74,33 @@ export default function PackageReceipt() {
           <>
             <div>
               <Typography variant="subtitle2" gutterBottom>
-                Premium Balicek material:{" "}
+                Premium balíček materiál:{" "}
                 <b>
                   <small>od </small>
-                  {state.calculatedVolume * data.package.premium.material}
+                  {format(
+                    "### ##0,#0",
+                    state.calculatedVolume * data.package.premium.material
+                  )}
                   <small> €</small>
                 </b>
               </Typography>{" "}
             </div>
             <div>
               <Typography variant="subtitle2" gutterBottom>
-                Premium Balicek montaz:{" "}
+                Premium balíček montáž:{" "}
                 <b>
                   <small>od </small>
                   {Math.round(
-                    state.calculatedVolume *
-                      data.package.premium.material *
-                      data.package.premium.services
+                    format(
+                      "### ##0,#0",
+                      state.calculatedVolume *
+                        data.package.premium.material *
+                        data.package.premium.services
+                    )
                   )}
                   <small> €</small>
                 </b>
-              </Typography>{" "}
+              </Typography>
             </div>
           </>
         )}

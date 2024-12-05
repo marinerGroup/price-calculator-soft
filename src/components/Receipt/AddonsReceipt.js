@@ -5,6 +5,7 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import format from "number-formatter";
 import { data } from "../../data";
 import "../../App.css";
 
@@ -20,7 +21,7 @@ export default function AddonsReceipt() {
           id="panel1-header"
         >
           <Typography variant="h6" component="h3">
-            Prislusenstvo:
+            Príslušenstvo:
           </Typography>
         </AccordionSummary>
         <AccordionDetails>

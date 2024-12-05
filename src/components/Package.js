@@ -23,7 +23,7 @@ export default function Package() {
       <RadioGroup name="package" defaultValue="basic">
         <FormControlLabel
           value="basic"
-          label="Zakladny balicek"
+          label="Zakladný balíček"
           control={
             <Radio
               onChange={(e) => {
@@ -31,21 +31,21 @@ export default function Package() {
               }}
               value="basic"
               inputProps={{
-                "aria-label": "Zakladny balicek",
+                "aria-label": "Zakladný balíček",
               }}
             />
           }
         />
         <FormControlLabel
           value="premium"
-          label="Premium balicek"
+          label="Premium balíček"
           control={
             <Radio
               onChange={(e) => {
                 setPackage("premium");
               }}
               inputProps={{
-                "aria-label": "Premium balicek",
+                "aria-label": "Premium balíček",
               }}
               value="premium"
             />

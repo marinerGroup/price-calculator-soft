@@ -35,13 +35,17 @@ export default function Dimmension() {
       type: ACTIONS.CALCULATE_ACTUAL_VOLUME,
       payload: dimmensions,
     });
+    dispatch({
+      type: ACTIONS.CALCULATE_CIRCUMFERENCE_METERS, // actually returnes base circumference and walls basic meters ((width + length) * 2) * width
+      payload: dimmensions,
+    });
     validateDimms();
   }, [dimmensions]);
 
   return (
     <section className="dimms">
       <small>
-        Minimalny objem bezena je 15m³ <br />
+        Minimálny objem bazéna je 15m³ <br />
         (momentalne{" "}
         <span className={error ? "bad" : "good"}>
           {dimmensions.width * dimmensions.length * dimmensions.depth}m³
@@ -51,13 +55,14 @@ export default function Dimmension() {
       <div>
         <TextField
           id="length"
-          label="Dlzka"
+          label="Dĺžka"
           type="number"
           sx={{ maxWidth: 75 }}
           onChange={(e) => {
+            console.log(typeof e.target.valueAsNumber);
             setDimmensions({
               ...dimmensions,
-              length: e.target.value,
+              length: e.target.valueAsNumber,
             });
           }}
           value={state.dimmensions.length}
@@ -65,13 +70,13 @@ export default function Dimmension() {
         />
         <TextField
           id="width"
-          label="Sirka"
+          label="Šírka"
           type="number"
           sx={{ maxWidth: 75 }}
           onChange={(e) => {
             setDimmensions({
               ...dimmensions,
-              width: e.target.value,
+              width: e.target.valueAsNumber,
             });
           }}
           value={dimmensions.width}
@@ -79,13 +84,13 @@ export default function Dimmension() {
         />
         <TextField
           id="depth"
-          label="Hlbka"
+          label="Hĺbka"
           type="number"
           sx={{ maxWidth: 75 }}
           onChange={(e) => {
             setDimmensions({
               ...dimmensions,
-              depth: e.target.value,
+              depth: e.target.valueAsNumber,
             });
           }}
           value={dimmensions.depth}

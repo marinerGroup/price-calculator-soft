@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useAppContext } from "../providers/poolContext";
 import emailjs from "emailjs-com";
-import format from "number-formatter";
 import Box from "@mui/material/Box";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import StepContent from "@mui/material/StepContent";
 import Button from "@mui/material/Button";
-import Paper from "@mui/material/Paper";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
@@ -45,7 +43,7 @@ function App() {
   };
 
   const handlePhoneChange = (event) => {
-    setPhone(format(event.target.value));
+    setPhone(event.target.value);
   };
 
   const validateEmail = (email) => {
@@ -58,7 +56,7 @@ function App() {
     {
       label: (
         <Typography key="1" variant="h6" component="h3" gutterBottom>
-          Zadaj rozmery bazena a typ sachty:
+          Zadajte rozmery bazéna a typ šachty:
         </Typography>
       ),
       description: [<Dimmension />, <Hatch />],
@@ -66,7 +64,7 @@ function App() {
     {
       label: (
         <Typography key="2" variant="h6" component="h3" gutterBottom>
-          Vyberte si bazenovy balik:
+          Vyberte si balícek bazenových technologii:
         </Typography>
       ),
       description: <Package />,
@@ -74,7 +72,7 @@ function App() {
     {
       label: (
         <Typography key="3" variant="h6" component="h3" gutterBottom>
-          Pridajte prislusenstvo:
+          Pridajte požadované príslušenstvo:
         </Typography>
       ),
       description: <Addons />,
@@ -117,7 +115,7 @@ function App() {
         );
     }
   };
-
+  console.log(state);
   useEffect(() => {
     return () => {};
   });
@@ -138,7 +136,7 @@ function App() {
                       optional={
                         index === steps.length - 1 ? (
                           <Typography variant="caption">
-                            Posledny krok
+                            Posledný krok
                           </Typography>
                         ) : null
                       }
@@ -154,15 +152,15 @@ function App() {
                           sx={{ mt: 1, mr: 1 }}
                         >
                           {index === steps.length - 1
-                            ? "ukoncit"
-                            : "Pokracovat"}
+                            ? "ukoncitPrepočítať"
+                            : "Pokračovať"}
                         </Button>
                         <Button
                           disabled={index === 0}
                           onClick={handleBack}
                           sx={{ mt: 1, mr: 1 }}
                         >
-                          Spat
+                          Späť
                         </Button>
                       </Box>
                     </StepContent>
@@ -211,7 +209,7 @@ function App() {
                     </div>
                     <div className="buttonHolder">
                       <Typography gutterBottom>
-                        Alebo nevahajte a zavolajte nam priamo na{"  "}
+                        Alebo neváhajte a zavolajte nám priamo na{"  "}
                         <b>0905&nbsp;090&nbsp;990</b>
                       </Typography>
                       <Button
@@ -220,10 +218,10 @@ function App() {
                         sx={{ mt: 1, mr: 1 }}
                         disabled={buttonError}
                       >
-                        Poslat
+                        Poslať
                       </Button>
                       <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
-                        Zacat znova
+                        Zacať znova
                       </Button>
                     </div>
                   </form>

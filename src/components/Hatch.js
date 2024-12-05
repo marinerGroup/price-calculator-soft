@@ -23,14 +23,14 @@ export default function Hatch() {
       <RadioGroup name="use-radio-group" defaultValue="none">
         <FormControlLabel
           value="none"
-          label="Bez sachty"
+          label="Bez šachty"
           control={
             <Radio
               onChange={(e) => {
                 setHatch("none");
               }}
               inputProps={{
-                "aria-label": "Bez sachty",
+                "aria-label": "Bez šachty",
               }}
               value="none"
             />
@@ -45,7 +45,7 @@ export default function Hatch() {
                 setHatch("concrete");
               }}
               inputProps={{
-                "aria-label": "Betonova sachta A",
+                "aria-label": "Betonová šachta",
               }}
               value="concrete"
             />
@@ -53,14 +53,14 @@ export default function Hatch() {
         />
         <FormControlLabel
           value="plastic"
-          label="Plastova sachta"
+          label="Plastová šachta"
           control={
             <Radio
               onChange={(e) => {
                 setHatch("plastic");
               }}
               inputProps={{
-                "aria-label": "Plastova sachta",
+                "aria-label": "Plastová šachta",
               }}
               value="plastic"
             />
