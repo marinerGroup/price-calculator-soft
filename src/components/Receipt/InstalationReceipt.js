@@ -16,18 +16,18 @@ export default function InstalationReceipt() {
   const printHatch = (hatchType) => {
     if (hatchType === "concrete") {
       return {
-        hatchName: "betonova",
+        hatchName: "betónová",
         hatchPrice: data.hatch.concrete,
       };
     }
     if (hatchType === "plastic") {
       return {
-        hatchName: "plastova",
+        hatchName: "plastová",
         hatchPrice: data.hatch.plastic,
       };
     } else
       return {
-        hatchName: "bez sachty",
+        hatchName: "bez šachty",
         hatchPrice: data.hatch.none,
       };
   };
@@ -43,7 +43,7 @@ export default function InstalationReceipt() {
             id="panel1-header"
           >
             <Typography variant="h6" component="h3">
-              Stavebne prace:
+              Stavebné práce
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
@@ -71,7 +71,7 @@ export default function InstalationReceipt() {
           </b>
         </Typography>
         <Typography variant="subtitle2" gutterBottom>
-          Betonáž - základy:
+          Betonáž - základy
           <b>
             <small>od </small>
             {format("### ##0,#0", state.actualVolume * data.concrete.base)}

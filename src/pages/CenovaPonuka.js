@@ -152,7 +152,7 @@ function App() {
                           sx={{ mt: 1, mr: 1 }}
                         >
                           {index === steps.length - 1
-                            ? "ukoncitPrepočítať"
+                            ? "Prepočítať"
                             : "Pokračovať"}
                         </Button>
                         <Button
