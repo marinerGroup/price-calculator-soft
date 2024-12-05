@@ -12,10 +12,18 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+main {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 24px 0;
+  background-color: aliceblue;
+}
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: lightgray;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,6 +36,16 @@
   color: #61dafb;
 }
 
+.canvas1 {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.canvas1 canvas {
+  height: 100%;
+  min-height: 450px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +53,69 @@
   to {
     transform: rotate(360deg);
   }
+}
+.flexWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+aside article {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.dimms > div {
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 0;
+}
+.addonsReceipt {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.addonsReceipt h3 {
+}
+main h3,
+aside h3 {
+  text-align: left;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  width: 100%;
+  margin-top: 6px !important;
+}
+
+main aside {
+  margin: 12px 0 24px;
+}
+
+aside h6 {
+  display: flex;
+  justify-content: space-between;
+}
+.totals h3 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.submitForm > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 12px 0 24px;
+}
+.buttonHolder {
+  display: block !important;
+}
+.good {
+  color: green;
+}
+.bad {
+  color: #d32f2f;
+}
+.receiptSection > div {
+  box-shadow: none !important;
+}
+.receiptSection > div > h3 > div {
+  padding: 0 !important;
 }
