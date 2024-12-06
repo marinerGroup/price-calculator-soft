@@ -90,9 +90,9 @@ export default function PackageReceipt() {
                 Premium balíček montáž:{" "}
                 <b>
                   <small>od </small>
-                  {Math.round(
-                    format(
-                      "### ##0,#0",
+                  {format(
+                    "### ##0,#0",
+                    Math.round(
                       state.calculatedVolume *
                         data.package.premium.material *
                         data.package.premium.services
