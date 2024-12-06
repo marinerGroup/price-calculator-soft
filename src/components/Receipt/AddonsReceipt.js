@@ -21,7 +21,7 @@ export default function AddonsReceipt() {
           id="panel1-header"
         >
           <Typography variant="h6" component="h3">
-            Príslušenstvo:
+            Príslušenstvo
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -34,7 +34,7 @@ export default function AddonsReceipt() {
 
       {state.addons.salinator && (
         <Typography variant="subtitle2" gutterBottom>
-          Salinator:{" "}
+          Salinátor:{" "}
           <b>
             <small>od </small>
             {data.addons.salinator.price}
@@ -54,7 +54,7 @@ export default function AddonsReceipt() {
       )}
       {state.addons.heatPump && (
         <Typography variant="subtitle2" gutterBottom>
-          Tepelne cerpadlo:
+          Tepelné čerpadlo:
           <b>
             <small>od </small>
             {data.addons.heatPump.price}
@@ -64,7 +64,7 @@ export default function AddonsReceipt() {
       )}
       {state.addons.stream && (
         <Typography variant="subtitle2" gutterBottom>
-          Protiprud:
+          Protipruúd:
           <b>
             <small>od </small>
             {data.addons.stream.price}
@@ -74,7 +74,7 @@ export default function AddonsReceipt() {
       )}
       {state.addons.asekoCl && (
         <Typography variant="subtitle2" gutterBottom>
-          Aseko Chlor:
+          Aseko Chlór:
           <b>
             <small>od </small>
             {data.addons.asekoCl.price}
@@ -84,7 +84,7 @@ export default function AddonsReceipt() {
       )}
       {state.addons.asekoSalt && (
         <Typography variant="subtitle2" gutterBottom>
-          Aseko Solne:
+          Aseko Soľné:
           <b>
             <small>od </small>
             {data.addons.asekoSalt.price}
@@ -94,7 +94,7 @@ export default function AddonsReceipt() {
       )}
       {state.addons.UVLamp && (
         <Typography variant="subtitle2" gutterBottom>
-          UV Lampa bezchlorova dezinfekcia:{" "}
+          UV Lampa bezchlórova dezinfekcia:{" "}
           <b>
             <small>od </small>
             {data.addons.UVLamp.price}

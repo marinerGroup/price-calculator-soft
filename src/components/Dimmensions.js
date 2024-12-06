@@ -46,7 +46,7 @@ export default function Dimmension() {
     <section className="dimms">
       <small>
         Minimálny objem bazéna je 15m³ <br />
-        (momentalne{" "}
+        (moment8lne{" "}
         <span className={error ? "bad" : "good"}>
           {dimmensions.width * dimmensions.length * dimmensions.depth}m³
         </span>

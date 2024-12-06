@@ -56,7 +56,7 @@ function App() {
     {
       label: (
         <Typography key="1" variant="h6" component="h3" gutterBottom>
-          Zadajte rozmery bazéna a typ šachty:
+          Zadajte rozmery bazéna a typ šachty
         </Typography>
       ),
       description: [<Dimmension />, <Hatch />],
@@ -64,7 +64,7 @@ function App() {
     {
       label: (
         <Typography key="2" variant="h6" component="h3" gutterBottom>
-          Vyberte si balícek bazenových technologii:
+          Vyberte si balíček bazénových technológií
         </Typography>
       ),
       description: <Package />,
@@ -115,7 +115,7 @@ function App() {
         );
     }
   };
-  console.log(state);
+
   useEffect(() => {
     return () => {};
   });
@@ -170,7 +170,7 @@ function App() {
               {activeStep === steps.length && (
                 <div>
                   <Typography gutterBottom>
-                    Zadajte vas email alebo telefonne cislo a my sa vam radi
+                    Zadajte váš email alebo telefónne číslo a my sa vám radi
                     ozveme
                   </Typography>
                   <form className="submitForm" onSubmit={submitForm}>
@@ -221,7 +221,7 @@ function App() {
                         Poslať
                       </Button>
                       <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
-                        Zacať znova
+                        Začať znova
                       </Button>
                     </div>
                   </form>

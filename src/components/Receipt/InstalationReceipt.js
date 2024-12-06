@@ -71,7 +71,7 @@ export default function InstalationReceipt() {
           </b>
         </Typography>
         <Typography variant="subtitle2" gutterBottom>
-          Betonáž - základy
+          Betonáž - základy:
           <b>
             <small>od </small>
             {format("### ##0,#0", state.actualVolume * data.concrete.base)}

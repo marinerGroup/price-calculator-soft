@@ -38,7 +38,7 @@ export default function Hatch() {
         />
         <FormControlLabel
           value="concrete"
-          label="Betonova sachta"
+          label="Betónová šachta"
           control={
             <Radio
               onChange={(e) => {

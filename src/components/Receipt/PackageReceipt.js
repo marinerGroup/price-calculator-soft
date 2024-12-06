@@ -24,7 +24,7 @@ export default function PackageReceipt() {
             id="panel1-header"
           >
             <Typography variant="h6" component="h3">
-              Bazénová technológia:
+              Bazénová technológia
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
