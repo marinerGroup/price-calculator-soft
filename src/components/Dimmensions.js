@@ -59,7 +59,6 @@ export default function Dimmension() {
           type="number"
           sx={{ maxWidth: 75 }}
           onChange={(e) => {
-            console.log(typeof e.target.valueAsNumber);
             setDimmensions({
               ...dimmensions,
               length: e.target.valueAsNumber,
