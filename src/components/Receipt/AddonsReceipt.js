@@ -54,7 +54,7 @@ export default function AddonsReceipt() {
       )}
       {state.addons.heatPump && (
         <Typography variant="subtitle2" gutterBottom>
-          Tepelné čerpadlo:
+          Tepelné Čerpadlo:
           <b>
             <small>od </small>
             {data.addons.heatPump.price}
@@ -64,7 +64,7 @@ export default function AddonsReceipt() {
       )}
       {state.addons.stream && (
         <Typography variant="subtitle2" gutterBottom>
-          Protipruúd:
+          Protiprúd:
           <b>
             <small>od </small>
             {data.addons.stream.price}

@@ -17,6 +17,16 @@ export default function Addons() {
     UVLamp: false,
   });
 
+  const addonLabels = [
+    "Salinátor",
+    "Svetlo 1ks",
+    "Tepelné Čerpadlo",
+    "Protiprúd",
+    "Aseko Chlór",
+    "Aseko Soľné",
+    "UV Lampa - Bezchlórová dezinfekcia",
+  ];
+
   useEffect(() => {
     dispatch({
       type: ACTIONS.UPDATE_ADDONS,
@@ -30,7 +40,7 @@ export default function Addons() {
         {Object.keys(addons).map((feature, index) => (
           <FormControlLabel
             key={index}
-            label={feature}
+            label={addonLabels[index]}
             control={
               <Checkbox
                 id={feature}

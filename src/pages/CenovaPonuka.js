@@ -28,6 +28,8 @@ function App() {
   const [error, setError] = useState(false);
   const [nameError, setNameError] = useState(false);
   const [buttonError, setButtonError] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [formState, setFormState] = useState(true);
   const { state, dispatch, ACTIONS } = useAppContext();
 
   const handleEmailChange = (event) => {
@@ -39,7 +41,7 @@ function App() {
   const handleNameChange = (e) => {
     setUserName(e.target.value);
     setNameError(e.target.value === "" ? true : false);
-    setButtonError(e.target.value === "" ? true : false);
+    // setButtonError(e.target.value === "" ? true : false);
   };
 
   const handlePhoneChange = (event) => {
@@ -72,7 +74,7 @@ function App() {
     {
       label: (
         <Typography key="3" variant="h6" component="h3" gutterBottom>
-          Pridajte požadované príslušenstvo:
+          Pridajte požadované príslušenstvo
         </Typography>
       ),
       description: <Addons />,
@@ -88,15 +90,16 @@ function App() {
   };
 
   const handleReset = () => {
+    setFormState(true);
     setActiveStep(0);
   };
-
   const submitForm = (e) => {
-    e.preventDefault(); //This is important, i'm not sure why, but the email won't send without it
-    console.log("here", e.target);
+    e.preventDefault();
     if (error || nameError) {
       return false;
     } else {
+      console.log("form submitting", e.target);
+      setLoading(true);
       emailjs
         .sendForm(
           "service_lq5jsyx",
@@ -106,10 +109,13 @@ function App() {
         )
         .then(
           (result) => {
+            setLoading(false);
+            setFormState(false);
             console.log(result);
             // window.location.reload(); //This is if you still want the page to reload (since e.preventDefault() cancelled that behavior)
           },
           (error) => {
+            setLoading(false);
             console.log(error.text);
           }
         );
@@ -127,7 +133,9 @@ function App() {
         <Card sx={{ minWidth: 350, maxWidth: 400 }}>
           <CardContent>
             <Box sx={{ maxWidth: 400 }}>
-              <img src="./logo.png" width="200px" />
+              <a href="https://www.marinergroup.sk/" alt="Mariner Group logo">
+                <img src="./logo.png" width="200px" />
+              </a>
               <Stepper activeStep={activeStep} orientation="vertical">
                 {steps.map((step, index) => (
                   <Step>
@@ -169,62 +177,79 @@ function App() {
               </Stepper>
               {activeStep === steps.length && (
                 <div>
-                  <Typography gutterBottom>
-                    Zadajte váš email alebo telefónne číslo a my sa vám radi
-                    ozveme
-                  </Typography>
                   <form className="submitForm" onSubmit={submitForm}>
-                    <HiddenFormFields />
-                    <div>
-                      <TextField
-                        sx={{ maxWidth: 150 }}
-                        label="Meno"
-                        variant="outlined"
-                        name="userName"
-                        onChange={handleNameChange}
-                        error={nameError}
-                        value={userName}
-                        helperText={nameError ? "Povinne pole" : ""}
-                      />
-                      <TextField
-                        sx={{ maxWidth: 150 }}
-                        label="Email"
-                        variant="outlined"
-                        name="email"
-                        value={email}
-                        onChange={handleEmailChange}
-                        error={error}
-                        helperText={
-                          error ? "Zadajte email v sparavnom formate" : ""
-                        }
-                      />
-                      <TextField
-                        sx={{ maxWidth: 150 }}
-                        label="Telefon"
-                        name="phone"
-                        variant="outlined"
-                        value={phone}
-                        onChange={handlePhoneChange}
-                      />
-                    </div>
+                    {formState && (
+                      <>
+                        <Typography gutterBottom>
+                          Zadajte váš email alebo telefónne číslo a my sa vám
+                          radi ozveme
+                        </Typography>
+                        <HiddenFormFields />
+                        <div>
+                          <TextField
+                            sx={{ maxWidth: 150 }}
+                            label="Meno"
+                            variant="outlined"
+                            name="userName"
+                            onChange={handleNameChange}
+                            error={nameError}
+                            value={userName}
+                            helperText={nameError ? "Povinne pole" : ""}
+                          />
+                          <TextField
+                            sx={{ maxWidth: 150 }}
+                            label="Email"
+                            variant="outlined"
+                            name="email"
+                            value={email}
+                            onChange={handleEmailChange}
+                            error={error}
+                            helperText={
+                              error ? "Zadajte email v sparavnom formate" : ""
+                            }
+                          />
+                          <TextField
+                            sx={{ maxWidth: 150 }}
+                            label="Telefon"
+                            name="phone"
+                            variant="outlined"
+                            value={phone}
+                            onChange={handlePhoneChange}
+                          />
+                        </div>
+                      </>
+                    )}
                     <div className="buttonHolder">
-                      <Typography gutterBottom>
-                        Alebo neváhajte a zavolajte nám priamo na{"  "}
-                        <b>0905&nbsp;090&nbsp;990</b>
-                      </Typography>
-                      <Button
-                        type="submit"
-                        variant="contained"
-                        sx={{ mt: 1, mr: 1 }}
-                        disabled={buttonError}
-                      >
-                        Poslať
-                      </Button>
+                      {formState && (
+                        <>
+                          <Typography gutterBottom>
+                            Alebo neváhajte a zavolajte nám priamo na{"  "}
+                            <b>
+                              <a href="tel:+4210905999999">
+                                0905&nbsp;090&nbsp;990
+                              </a>
+                            </b>
+                          </Typography>
+                          <Button
+                            type="submit"
+                            variant="contained"
+                            sx={{ mt: 1, mr: 1 }}
+                            disabled={buttonError}
+                          >
+                            Poslať
+                          </Button>
+                        </>
+                      )}
                       <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
                         Začať znova
                       </Button>
                     </div>
                   </form>
+                  {!formState && (
+                    <Typography gutterBottom>
+                      Ďakujeme za váš dopyt, ozveme sa vám pre viac detailov
+                    </Typography>
+                  )}
                 </div>
               )}
             </Box>

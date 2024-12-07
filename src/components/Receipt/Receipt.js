@@ -153,7 +153,16 @@ export default function Receipt() {
       <Card sx={{ minWidth: 350, maxWidth: 400 }}>
         <CardContent>
           <Box sx={{ maxWidth: 400 }}>
-            <img src="./logo.png" width="200px" />
+            <a href="https://www.marinergroup.sk/" alt="Mariner Group logo">
+              <img src="./logo.png" width="200px" />
+            </a>
+            <section className="receiptSection">
+              <small>
+                Dĺžka: <b>{state.dimmensions.length}m</b> Šírka:{" "}
+                <b>{state.dimmensions.width}m</b> Hĺbka:{" "}
+                <b>{state.dimmensions.length}m</b>
+              </small>
+            </section>
             <PackageReceipt />
             {/* <Divider /> */}
             <InstalationReceipt />
