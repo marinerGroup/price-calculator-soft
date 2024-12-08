@@ -120,6 +120,7 @@ aside h6 {
 }
 .mt12 {
   margin-top: 12px;
+  display: inline-block;
 }
 .themeBlue {
   color: #1976d2;
