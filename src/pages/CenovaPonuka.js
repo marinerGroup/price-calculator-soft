@@ -225,8 +225,8 @@ function App() {
                           <Typography gutterBottom>
                             Alebo neváhajte a zavolajte nám priamo na{"  "}
                             <b>
-                              <a href="tel:+4210905999999">
-                                0905&nbsp;090&nbsp;990
+                              <a href="tel:+421905812811">
+                                0905&nbsp;812&nbsp;811
                               </a>
                             </b>
                           </Typography>

@@ -18,11 +18,11 @@ main {
   justify-content: space-around;
   flex-wrap: wrap;
   padding: 24px 0;
-  background-color: aliceblue;
+  background-color: transparent;
 }
 
 .App-header {
-  background-color: lightgray;
+  background-color: transparent;
 
   display: flex;
   flex-direction: column;
