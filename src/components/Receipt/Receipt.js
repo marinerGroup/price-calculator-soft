@@ -119,7 +119,7 @@ export default function Receipt() {
       }));
       setReceiptTotals((prevTotals) => ({
         ...prevTotals,
-        concreteWalls: state.actualVolume * data.concrete.walls,
+        concreteWalls: state.circumferenceMeters * data.concrete.walls,
       }));
       setReceiptTotals((prevTotals) => ({
         ...prevTotals,
@@ -160,13 +160,11 @@ export default function Receipt() {
               <small>
                 Dĺžka: <b>{state.dimmensions.length}m</b> Šírka:{" "}
                 <b>{state.dimmensions.width}m</b> Hĺbka:{" "}
-                <b>{state.dimmensions.length}m</b>
+                <b>{state.dimmensions.depth}m</b>
               </small>
             </section>
             <PackageReceipt />
-            {/* <Divider /> */}
             <InstalationReceipt />
-            {/* <Divider /> */}
             <AddonsReceipt />
             <Divider />
             <TotalsReceipt

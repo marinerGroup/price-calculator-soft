@@ -4,7 +4,7 @@ export const data = {
   extraction: 55,
   concrete: {
     base: 115,
-    walls: 320,
+    walls: 330,
     // walls: 370,
   },
   hatch: {

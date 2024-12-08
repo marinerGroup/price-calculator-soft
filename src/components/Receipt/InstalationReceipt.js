@@ -83,7 +83,11 @@ export default function InstalationReceipt() {
           Betonáž - Steny:
           <b>
             <small>od </small>
-            {format("### ##0,#0", state.actualVolume * data.concrete.walls)}
+            {format(
+              "### ##0,#0",
+              state.circumferenceMeters * data.concrete.walls
+            )}
+            {/* {format("### ##0,#0", state.actualVolume * data.concrete.walls)} */}
             <small> €</small>
           </b>
         </Typography>
