@@ -119,3 +119,6 @@ aside h6 {
 .receiptSection > div > h3 > div {
   padding: 0 !important;
 }
+.mb12 {
+  margin-bottom: 12px;
+}

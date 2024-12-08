@@ -153,10 +153,14 @@ export default function Receipt() {
       <Card sx={{ minWidth: 350, maxWidth: 400 }}>
         <CardContent>
           <Box sx={{ maxWidth: 400 }}>
-            <a href="https://www.marinergroup.sk/" alt="Mariner Group logo">
-              <img src="./logo.png" width="200px" />
+            <a
+              href="https://www.marinergroup.sk/"
+              alt="Back to mariner group homepage"
+            >
+              <img src="./logo.png" width="200px" alt="Mariner Group logo" />
             </a>
             <section className="receiptSection">
+              <small>Toto je cenová kalkulácia pre bazén s rozmermi</small>
               <small>
                 Dĺžka: <b>{state.dimmensions.length}m</b> Šírka:{" "}
                 <b>{state.dimmensions.width}m</b> Hĺbka:{" "}

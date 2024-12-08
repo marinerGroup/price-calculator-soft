@@ -44,3 +44,10 @@ export const data = {
     },
   },
 };
+
+export const copy = {
+  premium:
+    "Bazénová Fólia PRO 3000, Skimmer, Spodný výpust, Stenné trysky 3x, Filtračný systém TURBO, Elektrická skriňa a všetok Vodoinštalacný materiál",
+  basic:
+    "Bazénová Fólia ADVANCE 2000, Skimmer, Spodný výpust, Stenné trysky 3x, Filtračný systém, Elektrická skriňa a všetok Vodoinštalacný materiál",
+};

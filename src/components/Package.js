@@ -4,7 +4,7 @@ import { useAppContext } from "../providers/poolContext";
 import RadioGroup from "@mui/material/RadioGroup";
 import Radio from "@mui/material/Radio";
 import FormControlLabel from "@mui/material/FormControlLabel";
-
+import { copy } from "../data";
 import "../App.css";
 
 export default function Package() {
@@ -36,6 +36,7 @@ export default function Package() {
             />
           }
         />
+        <small className="mb12">{copy.basic}</small>
         <FormControlLabel
           value="premium"
           label="Premium balíček"
@@ -51,6 +52,7 @@ export default function Package() {
             />
           }
         />
+        <small className="mb12">{copy.premium}</small>
       </RadioGroup>
     </section>
   );

@@ -8,7 +8,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-import { data } from "../../data";
+import { copy, data } from "../../data";
 import "../../App.css";
 
 export default function PackageReceipt() {
@@ -29,9 +29,7 @@ export default function PackageReceipt() {
           </AccordionSummary>
           <AccordionDetails>
             <small>
-              Folia - farba podla vyberu, Skimmer, Spodní vypust, Stenove trysky
-              3x, Filtracny system, Elektricka skrina vsetok Vodoinstalacny
-              material
+              {state.package === "basic" ? copy.basic : copy.premium}
             </small>
           </AccordionDetails>
         </Accordion>
