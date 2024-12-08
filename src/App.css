@@ -85,10 +85,6 @@ aside h3 {
   margin-top: 6px !important;
 }
 
-main aside {
-  margin: 12px 0 24px;
-}
-
 aside h6 {
   display: flex;
   justify-content: space-between;
