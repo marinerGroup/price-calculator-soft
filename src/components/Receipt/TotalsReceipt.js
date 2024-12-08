@@ -49,7 +49,7 @@ export const TotalsReceipt = (props) => {
           <small> €</small>
         </b>
       </Typography>
-      <Typography variant="h6" component="h3">
+      <Typography variant="h6" component="h3" className="mb12">
         Cena s Dph:
         <b className="good">
           <small>od </small>

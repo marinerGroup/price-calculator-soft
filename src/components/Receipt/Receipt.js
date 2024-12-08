@@ -161,6 +161,7 @@ export default function Receipt() {
             </a>
             <section className="receiptSection">
               <small>Toto je cenová kalkulácia pre bazén s rozmermi</small>
+              <br />
               <small>
                 Dĺžka: <b>{state.dimmensions.length}m</b> Šírka:{" "}
                 <b>{state.dimmensions.width}m</b> Hĺbka:{" "}
@@ -176,7 +177,22 @@ export default function Receipt() {
               poolTotalIncludingVAT={
                 calculateTotals().poolTotalIncludingVAT || ""
               }
-            />
+            />{" "}
+            <small className="mt12">
+              Uvedená cena je čo najpresnejšia ako sa dá vypočítať z
+              limitovaných informácií ktoré ste nám zadali. Pre záväznú
+              kalkuláciu nás kontaktujte na:{" "}
+              <a
+                className="themeBlue"
+                href="mailto:info.marinergroup@gmail.com"
+              >
+                info.marinergroup@gmail.com
+              </a>{" "}
+              alebo{" "}
+              <a className="themeBlue" href="tel:+421905812811">
+                0905&nbsp;812&nbsp;811
+              </a>
+            </small>
           </Box>
         </CardContent>
       </Card>

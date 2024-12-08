@@ -225,7 +225,7 @@ function App() {
                           <Typography gutterBottom>
                             Alebo neváhajte a zavolajte nám priamo na{"  "}
                             <b>
-                              <a href="tel:+421905812811">
+                              <a className="themeBlue" href="tel:+421905812811">
                                 0905&nbsp;812&nbsp;811
                               </a>
                             </b>
