@@ -160,7 +160,7 @@ export default function Receipt() {
               <img src="./logo.png" width="200px" alt="Mariner Group logo" />
             </a>
             <section className="receiptSection">
-              <small>Toto je cenová kalkulácia pre bazén s rozmermi</small>
+              <small>Cenová kalkulácia pre bazén s rozmermi:</small>
               <br />
               <small>
                 Dĺžka: <b>{state.dimmensions.length}m</b> Šírka:{" "}

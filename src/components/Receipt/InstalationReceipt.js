@@ -48,9 +48,9 @@ export default function InstalationReceipt() {
           </AccordionSummary>
           <AccordionDetails>
             <small>
-              Stavebne prace zahrnaju vykop odvoz a bezpecne spracovanie odpadu,
-              betonaz zakladov, steny, termoizolaciu stien, shody do bazenu a v
-              pripade zvolenia aj sachtu, jej pripravu a zapojenie
+              Stavebné práce zahŕňajú výkop odvoz a bezpečná spracovanie odpadu,
+              betonáž základov, steny, termoizoláciu stien, schody do bazéna a v
+              prípade zvolenia aj šachtu, jej prípravu a zapojenie.
             </small>
           </AccordionDetails>
         </Accordion>

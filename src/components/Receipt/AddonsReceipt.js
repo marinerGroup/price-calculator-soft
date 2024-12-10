@@ -26,8 +26,8 @@ export default function AddonsReceipt() {
         </AccordionSummary>
         <AccordionDetails>
           <small>
-            V prislusenstve je zahrnuta montaz, testovacie spustenie a
-            predvedenie
+            Vo vybranom zozname príslušenstva nie je zahrnutá montáž. Vo
+            výslednej cene už je aj montáž, testovacie spustenie a predvedenie
           </small>
         </AccordionDetails>
       </Accordion>

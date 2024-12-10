@@ -22,8 +22,8 @@ export default function Addons() {
     "Svetlo 1ks",
     "Tepelné Čerpadlo",
     "Protiprúd",
-    "Aseko Chlór",
-    "Aseko Soľné",
+    "Aseko Cl",
+    "Aseko NaCl",
     "UV Lampa - Bezchlórová dezinfekcia",
   ];
 
