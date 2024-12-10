@@ -48,7 +48,7 @@ export default function InstalationReceipt() {
           </AccordionSummary>
           <AccordionDetails>
             <small>
-              Stavebné práce zahŕňajú výkop odvoz a bezpečná spracovanie odpadu,
+              Stavebné práce zahŕňajú výkop odvoz a bezpečné spracovanie odpadu,
               betonáž základov, steny, termoizoláciu stien, schody do bazéna a v
               prípade zvolenia aj šachtu, jej prípravu a zapojenie.
             </small>
@@ -94,7 +94,7 @@ export default function InstalationReceipt() {
         <Typography variant="subtitle2" gutterBottom>
           Šachta: {printHatch(state.hatch).hatchName}
           <b>
-            <small>od </small>{" "}
+            <small></small>{" "}
             {format("### ##0,#0", printHatch(state.hatch).hatchPrice)}{" "}
             <small> €</small>
           </b>
