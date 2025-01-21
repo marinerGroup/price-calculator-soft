@@ -11,7 +11,7 @@ import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import CardContent from "@mui/material/CardContent";
 
-import { data } from "../../data";
+import { data, magicNumbers } from "../../data";
 import "../../App.css";
 
 export default function Receipt() {
@@ -133,10 +133,13 @@ export default function Receipt() {
     for (const it in receiptTotals) {
       runningTotal += receiptTotals[it];
     }
+
+    let runningTotalWithSale = runningTotal * magicNumbers.extraSale;
+
     let temObj = {
-      poolTotal: runningTotal,
-      poolTotalVat: runningTotal * 0.2,
-      poolTotalIncludingVAT: runningTotal * 1.2,
+      poolTotal: runningTotalWithSale,
+      poolTotalVat: runningTotalWithSale * magicNumbers.VAT,
+      poolTotalIncludingVAT: runningTotalWithSale * magicNumbers.withVAT,
     };
     runningTotal = 0;
     return temObj;

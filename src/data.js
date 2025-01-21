@@ -47,7 +47,13 @@ export const data = {
 
 export const copy = {
   premium:
-    "Bazénová Fólia ALKORPLAN TOUCH, Skimmer, Spodný výpust, Stenné trysky 3x, Filtračný systém SPECK, Elektrická skriňa a všetok Vodoinštalacný materiál",
+    "Bazénová Fólia ALKORPLAN TOUCH, Skimmer, Spodný výpust, Stenné trysky 3x, Filtračný systém SPECK, Elektrická skriňa a všetok Vodoinštalačný materiál",
   basic:
-    "Bazénová Fólia ALKORPLAN 2000, Skimmer, Spodný výpust, Stenné trysky 3x, Filtračný systém, Elektrická skriňa a všetok Vodoinštalacný materiál",
+    "Bazénová Fólia ALKORPLAN 2000, Skimmer, Spodný výpust, Stenné trysky 3x, Filtračný systém, Elektrická skriňa a všetok Vodoinštalačný materiál",
+};
+
+export const magicNumbers = {
+  VAT: 0.23,
+  withVAT: 1.23,
+  extraSale: 0.9,
 };
